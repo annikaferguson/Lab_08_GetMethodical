@@ -27,6 +27,7 @@ public class BirthDateTime
             case 3:
                 birthDay = SafeInput.getRangedInt(in, "Enter your birth day", 1, 31);
                 break;
+
             // April
             case 4:
                 birthDay = SafeInput.getRangedInt(in, "Enter your birth day", 1, 30);
