@@ -13,7 +13,7 @@ public class Reggie
 
         //UC Student M Number
         String MNumber = "";
-        MNumber = SafeInput.getRegExString(in, "Enter your UC Student M Number", ^(M|m)\\d{5}$);
-
+        MNumber = SafeInput.getRegExString(in, "Enter your UC Student M Number", "^(M|m)\\d{8}$");
+        System.out.println("Your M Number is: " + MNumber);
     }
 }
