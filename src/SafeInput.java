@@ -120,7 +120,7 @@ public class SafeInput
         boolean done = false;
 
         do {
-            System.out.println("\n" + prompt + "[" + low + " - " + high + "]: ");
+            System.out.print("\n" + prompt + "[" + low + " - " + high + "]: ");
             if(pipe.hasNextDouble()) {
                 retValue = pipe.nextDouble();
                 pipe.nextLine();
@@ -152,7 +152,7 @@ public class SafeInput
 
         do
         {
-            System.out.println("\n" + prompt + " [Y/N] ");
+            System.out.print("\n" + prompt + " [Y/N] ");
             response = pipe.nextLine();
             if(response.equalsIgnoreCase("Y"))
             {
@@ -162,7 +162,7 @@ public class SafeInput
                 gotAVal = true;
                 retVal = false;
             } else {
-                System.out.println("You must answer [Y/N]! " + response);
+                System.out.println("\nYou must answer [Y/N]! " + response);
             }
         } while(!gotAVal);
 
@@ -191,6 +191,46 @@ public class SafeInput
         } while(!gotAValue);
 
         return value;
+    }
+
+    /**
+     * PART H AND PROGRAM 06: Pretty Header
+     * output always 60 characters wide for each line
+     */
+
+     public static void prettyHeader(String msg)
+    {
+        int lineLength = 0;
+        boolean done = false;
+        String stars = "";
+
+        int beginSpace = 0;
+        int endSpace = 0;
+
+        beginSpace = (54 - msg.length()) / 2;
+        endSpace = 54 - msg.length() - beginSpace;
+
+        for(int c = 0; c < 60; c++) {
+            System.out.print("*");
+        }
+        System.out.print("\n***");
+        //print first group of spaces
+        for(int c = 0; c < beginSpace; c++) {
+            System.out.print(" ");
+        }
+        //message
+        System.out.print(msg);
+        //print last group of spaces
+        for(int c = 0; c < endSpace; c++) {
+            System.out.print(" ");
+        }
+
+        System.out.print("***");
+        System.out.println();
+
+        for(int c = 0; c < 60; c++) {
+            System.out.print("*");
+        }
     }
 
 }

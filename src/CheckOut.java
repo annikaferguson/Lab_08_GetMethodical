@@ -17,7 +17,7 @@ public class CheckOut
             } while (!done);
         }
 
-        System.out.println("The total cost of your items is: " + itemPrice);
+        System.out.printf("The total is: %6.2f", itemPrice);
 
     }
 }
